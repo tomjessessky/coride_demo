@@ -1,0 +1,34 @@
+<ion-view title="Find a Ride" data-ng-init="initializeMap();">
+  <ion-nav-buttons side="left">
+    <button menu-toggle="left" class="button button-icon icon ion-navicon"></button>
+  </ion-nav-buttons>
+  <ion-content class="has-header">
+
+    <div id="map-canvas"></div>
+    
+    <div class="list card">
+
+	  <div class="item item-icon-left">
+	    <i class="icon ion-location color-green"></i>
+	    From: <span class="text-bold" ng-bind="best_ride.origin"></span>
+	  </div>
+
+	  <div class="item item-icon-left">
+	    <i class="icon ion-location color-orange"></i>
+	    Stopping At: <span class="text-bold" ng-bind="best_ride.stop"></span>
+	  </div>
+
+	  <div class="item item-icon-left">
+	    <i class="icon ion-location color-red"></i>
+	    Final Destination: <span class="text-bold" ng-bind="best_ride.destination"></span>
+	  </div>
+
+	  <div class="item item-icon-left">
+	    <i class="icon ion-social-usd color-green"></i>
+	    Price: <span class="text-bold" ng-bind="best_ride.cost"></span>
+	  </div>
+
+	</div>
+	<button class="button" ng-click="find()">Enter new destination</button>
+  </ion-content>
+</ion-view>

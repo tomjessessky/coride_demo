@@ -1,0 +1,22 @@
+<ion-view title="About This Demo">
+  <ion-nav-buttons side="left">
+    <button menu-toggle="left"class="button button-icon icon ion-navicon"></button>
+  </ion-nav-buttons>
+  <ion-content class="has-header row">
+
+    <p>For demonstration purposes, there are three rides available, one from Madison to Green Bay, one from Madison to St. Louis, and one from Madison to San Francisco. Timing is ignored for the sake of simplicity. With this app, users can request rides to any city. Assuming the drivers of the three available rides are willing to make a "Stop", the app calculates which ride would be best to join by finding the route that passes closest to the requested stop. The following calculation is used: 
+    </p>
+
+    <div class="card">
+  	  <div class="item item-text-wrap">
+  	    Extra Driving Distance = [ Distance(Origin to Stop) + Distance(Stop to Destination) ] - Distance(Origin to Destination)
+  	  </div>
+  	</div>
+
+    <p>The "Random" page demonstrates use of Ionicons and the Colr API. It calls the API requesting 6 random colors. From an array of known Ionicons, 6 are randomly chosen. The ng-repeat directive is used to render the 6 random icons, each with its own random color.</p>
+
+   <p>This is a demo AngularJS app running on the <a href="http://ionicframework.com">Ionic Framework by Drifty Co</a>. This app was written by Tom Jessessky as a sample for Adam Braus of <a href="http://coride.co">Coride.co</a>.
+    </p>
+
+  </ion-content>
+</ion-view>
