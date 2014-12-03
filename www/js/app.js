@@ -6,7 +6,9 @@
 // 'starter.controllers' is found in controllers.js
 angular.module('starter', [
   'ionic', 
-  'starter.controllers'
+  'ngResource',
+  'starter.controllers',
+  'starter.services'
 ])
 
 .run(function($ionicPlatform) {

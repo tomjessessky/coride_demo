@@ -149,22 +149,18 @@ angular.module('starter.controllers', [])
 
 
 
-.controller('RandomCtrl', function($scope, $http) {
+.controller('RandomCtrl', function($scope, $http, Color) {
   //get 6 random colors
-  $http.get("http://www.colr.org/json/colors/random/6")
-    .success(function(data, status, headers, config) {
-      //store colors to scope
-      $scope.colors = data.colors;
+  var colorData = Color.get({count: 6}, function() {
+    //store colors to scope
+    $scope.colors = colorData.colors;
 
-      //generate 6 random icons
-      $scope.random_icons = new Array(6);
-      for (var i = $scope.random_icons.length - 1; i >= 0; i--) {
-        //icons is pulled from js/icons.js, there are 246 elements in array
-        $scope.random_icons[i] = icons[Math.floor(Math.random() * 246)];
-      };
-    })
-    .error(function(data, status, headers, config) {
-      console.log("Oops! " + data);
-    })
+    //generate 6 random icons
+    $scope.random_icons = new Array(6);
+    for (var i = $scope.random_icons.length - 1; i >= 0; i--) {
+      //icons is pulled from js/icons.js, there are 246 elements in array
+      $scope.random_icons[i] = icons[Math.floor(Math.random() * 246)];
+    };
+  });
   
 });
