@@ -7,6 +7,7 @@
 angular.module('starter', [
   'ionic', 
   'ngResource',
+  'ngCordova',
   'starter.controllers',
   'starter.services'
 ])

@@ -149,7 +149,7 @@ angular.module('starter.controllers', [])
 
 
 
-.controller('RandomCtrl', function($scope, $http, Color) {
+.controller('RandomCtrl', function($scope, $http, Color, $cordovaClipboard, $ionicPlatform) {
   //get 6 random colors
   var colorData = Color.get({count: 6}, function() {
     //store colors to scope
@@ -162,5 +162,20 @@ angular.module('starter.controllers', [])
       $scope.random_icons[i] = icons[Math.floor(Math.random() * 246)];
     };
   });
-  
+
+  $ionicPlatform.ready(function() {
+    $scope.copyText = function() {
+      $scope.message = 'copyText called';
+      $cordovaClipboard
+        .copy('Hello!')
+        .then(function () {
+          // success
+          $scope.message = "Text copied to clipboard";
+        }, function () {
+          // error
+          $scope.message = "There was an error.";
+        });
+      };
+  });
+
 });
